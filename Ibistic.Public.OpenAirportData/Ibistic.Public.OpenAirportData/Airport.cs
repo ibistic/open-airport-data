@@ -15,5 +15,10 @@
         public float TimezoneUtcOffset { get; internal set; }
         public DaylightSavingsTimeType DaylightSavingsTime { get; internal set; }
         public string TimezoneName { get; internal set; }
+
+        public override string ToString()
+        {
+            return $"Airport name: {Name}, City: {City}, Iata: {IataCode}, Icao: {IcaoCode}";
+        }
     }
 }

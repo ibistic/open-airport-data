@@ -18,7 +18,7 @@ namespace Ibistic.Public.OpenAirportData.OpenFlightsData
         public string CacheFileName { get; }
         internal long RawDownloadCount { get; private set; }
 
-        public OpenFlightsDataProvider(string cacheFileName)
+        protected OpenFlightsDataProvider(string cacheFileName)
         {
             CacheFileName = cacheFileName ?? throw new ArgumentNullException(nameof(cacheFileName));
         }
