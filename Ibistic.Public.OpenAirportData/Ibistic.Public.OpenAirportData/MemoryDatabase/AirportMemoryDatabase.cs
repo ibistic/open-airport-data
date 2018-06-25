@@ -23,9 +23,12 @@ namespace Ibistic.Public.OpenAirportData.MemoryDatabase
             }
 
             var newCodes = new HashSet<string>();
+            bool airportsEnumerableEmpty = true;
 
             foreach (Airport airport in airports)
             {
+                airportsEnumerableEmpty = false;
+
                 var iataCode = airport.IataCode;
 
                 if (String.IsNullOrEmpty(iataCode))
@@ -42,7 +45,7 @@ namespace Ibistic.Public.OpenAirportData.MemoryDatabase
                 newCodes.Add(iataCode);
             }
 
-            if (newCodes.Count == 0) //Late validation of argument to avoid multiple enumeration
+            if (!airportsEnumerableEmpty) //Late validation of argument to avoid multiple enumeration
             {
                 throw new ArgumentException($"At least one airport required. To empty, use the method {nameof(Clear)}.");
             }
