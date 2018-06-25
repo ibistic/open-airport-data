@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Ibistic.Public.OpenAirportData
 {
+    [Serializable]
     public sealed class Country
     {
         public string Name { get; internal set; }

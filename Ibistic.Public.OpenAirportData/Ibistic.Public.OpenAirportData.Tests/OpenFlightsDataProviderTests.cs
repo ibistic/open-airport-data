@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Linq.Expressions;
 using Ibistic.Public.OpenAirportData.OpenFlightsData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -156,7 +154,7 @@ namespace Ibistic.Public.OpenAirportData.Tests
                             missingCountry++;
                         }
 
-                        if (String.IsNullOrEmpty(airport.TimezoneName))
+                        if (String.IsNullOrEmpty(airport.TimeZoneName))
                         {
                             missingTimezoneName++;
                         }
@@ -264,7 +262,7 @@ namespace Ibistic.Public.OpenAirportData.Tests
                             }
                         }
 
-                        if (String.IsNullOrEmpty(airport.TimezoneName) && airport.TimezoneUtcOffset == 0F)
+                        if (String.IsNullOrEmpty(airport.TimeZoneName) && airport.TimeZoneUtcOffset == 0F)
                         {
                             Console.WriteLine($"Airport '{airport.Name}' ({airport.IataCode}) is missing Timezone information");
                             missingTimezoneName++;
