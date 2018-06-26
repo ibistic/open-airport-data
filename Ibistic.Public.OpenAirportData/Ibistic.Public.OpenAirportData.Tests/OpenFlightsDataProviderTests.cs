@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Ibistic.Public.OpenAirportData.MemoryDatabase;
 using Ibistic.Public.OpenAirportData.OpenFlightsData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -289,6 +290,30 @@ namespace Ibistic.Public.OpenAirportData.Tests
             }
         }
 
+        [TestMethod]
+        public void TestAirportsWithCountries()
+        {
+            using (var countryProvider = new OpenFlightsDataCountryProvider(Path.GetTempFileName()))
+            {
+                using (var airportProvider = new OpenFlightsDataAirportProvider(Path.GetTempFileName(), countryProvider))
+                {
+                    var airports = airportProvider.GetAllAirports();
+
+                    var database = new AirportIataCodeDatabase();
+                    database.AddOrUpdateAirports(airports, true, true);
+
+                    Assert.IsTrue(database.GetAllAirports().Count > 1000, "Expected at least 1000 airports");
+
+                    bool airportFound = database.TryGetAirport("AGP", out Airport malagaAirport);
+                    Assert.IsTrue(airportFound);
+                    Assert.IsNotNull(malagaAirport);
+                    Assert.IsTrue(malagaAirport.CountryAlpha2.Equals("ES", StringComparison.Ordinal));
+
+                    Assert.IsFalse(database.TryGetAirport("___", out _));
+
+                }
+            }
+        }
 
     }
 }
