@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.0.0-alpha2</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Ibistic Technologies</Authors>
+    <PackageId>Ibistic.Public.OpenAirportData</PackageId>
+    <Description>A framework for obtaining and working with airport information from publicly available databases. The typical usecase is to resolve information such as name, country and timezone information from e.g. an IATA code.
+
+
+Data sources utilized:
+Openflights Airport and Country data available from https://openflights.org/data.html under the Open Database License (https://opendatacommons.org/licenses/odbl/1.0/).
+
+Please only use this component if you agree to and comply with the above license terms.</Description>
+    <Copyright>Copyright © Ibistic Technologies 2018</Copyright>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ibistic/open-airport-data</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ibistic/open-airport-data.git</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>iata, airports</PackageTags>
+    <PackageReleaseNotes>1.0.0: First public release</PackageReleaseNotes>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="7.1.1" />
+  </ItemGroup>
+
+</Project>
