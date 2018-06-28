@@ -45,7 +45,7 @@ namespace Ibistic.Public.OpenAirportData.MemoryDatabase
                 newCodes.Add(iataCode);
             }
 
-            if (!airportsEnumerableEmpty) //Late validation of argument to avoid multiple enumeration
+            if (airportsEnumerableEmpty) //Late validation of argument to avoid multiple enumeration
             {
                 throw new ArgumentException($"At least one airport required. To empty, use the method {nameof(Clear)}.");
             }

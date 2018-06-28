@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.0-alpha2</Version>
+    <Version>1.0.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Ibistic Technologies</Authors>
     <PackageId>Ibistic.Public.OpenAirportData</PackageId>
@@ -18,11 +18,11 @@ Please only use this component if you agree to and comply with the above license
     <PackageProjectUrl>https://github.com/ibistic/open-airport-data</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ibistic/open-airport-data.git</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
-    <PackageTags>iata, airports</PackageTags>
+    <PackageTags>iata, airports, airport</PackageTags>
     <PackageReleaseNotes>1.0.0: First public release</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <FileVersion>1.0.0.1</FileVersion>
+    <AssemblyVersion>1.0.0.4</AssemblyVersion>
+    <FileVersion>1.0.0.4</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
