@@ -26,7 +26,7 @@ Please only use this component if you agree to and comply with the above license
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CsvHelper" Version="7.1.1" />
+    <PackageReference Include="CsvHelper" Version="12.2.3" />
   </ItemGroup>
 
 </Project>
