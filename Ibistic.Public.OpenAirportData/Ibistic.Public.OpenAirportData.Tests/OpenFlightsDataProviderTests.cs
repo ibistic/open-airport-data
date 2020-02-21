@@ -6,7 +6,7 @@ using Ibistic.Public.OpenAirportData.MemoryDatabase;
 using Ibistic.Public.OpenAirportData.OpenFlightsData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ibistic.Public.OpenAirportData.Tests2
+namespace Ibistic.Public.OpenAirportData.Tests
 {
     [TestClass]
     public class OpenFlightsDataProviderTests
@@ -216,7 +216,7 @@ namespace Ibistic.Public.OpenAirportData.Tests2
         [TestMethod]
         public void TestListInvalidAirports()
         {
-            Dictionary<string, Country> countries = new Dictionary<string, Country>();
+            var countries = new Dictionary<string, Country>();
 
             using (var countryProvider = new OpenFlightsDataCountryProvider(Path.GetTempFileName()))
             {

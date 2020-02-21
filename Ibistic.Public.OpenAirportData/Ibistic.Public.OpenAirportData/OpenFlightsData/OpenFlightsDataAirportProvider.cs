@@ -58,7 +58,7 @@ namespace Ibistic.Public.OpenAirportData.OpenFlightsData
 
         private IEnumerable<Airport> AddCountryInformation(IEnumerable<Airport> airports)
         {
-            Dictionary<string, Country> countriesByName = new Dictionary<string, Country>();
+            var countriesByName = new Dictionary<string, Country>();
 
             foreach (var country in _countryProvider.GetAllCountries())
             {
