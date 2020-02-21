@@ -1,14 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2026
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ibistic.Public.OpenAirportData", "Ibistic.Public.OpenAirportData\Ibistic.Public.OpenAirportData.csproj", "{7E1E0BC0-6375-434C-9034-B81F2C273833}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ibistic.Public.OpenAirportData", "Ibistic.Public.OpenAirportData\Ibistic.Public.OpenAirportData.csproj", "{7E1E0BC0-6375-434C-9034-B81F2C273833}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ibistic.Public.OpenAirportData.Tests", "Ibistic.Public.OpenAirportData.Tests\Ibistic.Public.OpenAirportData.Tests.csproj", "{6324D31D-59D3-489D-A0FF-59998DCBF32A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7E1E0BC0-6375-434C-9034-B81F2C273833} = {7E1E0BC0-6375-434C-9034-B81F2C273833}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ibistic.Public.OpenAirportData.Tests", "Ibistic.Public.OpenAirportData.Tests\Ibistic.Public.OpenAirportData.Tests.csproj", "{B182F487-EA05-4CFD-9898-4DD1520BB8E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +17,10 @@ Global
 		{7E1E0BC0-6375-434C-9034-B81F2C273833}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E1E0BC0-6375-434C-9034-B81F2C273833}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E1E0BC0-6375-434C-9034-B81F2C273833}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6324D31D-59D3-489D-A0FF-59998DCBF32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6324D31D-59D3-489D-A0FF-59998DCBF32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6324D31D-59D3-489D-A0FF-59998DCBF32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6324D31D-59D3-489D-A0FF-59998DCBF32A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B182F487-EA05-4CFD-9898-4DD1520BB8E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B182F487-EA05-4CFD-9898-4DD1520BB8E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B182F487-EA05-4CFD-9898-4DD1520BB8E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B182F487-EA05-4CFD-9898-4DD1520BB8E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
