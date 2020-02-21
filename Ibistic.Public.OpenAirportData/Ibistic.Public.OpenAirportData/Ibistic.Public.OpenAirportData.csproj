@@ -20,10 +20,10 @@ Please only use this component if you agree to and comply with the above license
     <RepositoryType>Git</RepositoryType>
     <PackageTags>iata, airports, airport</PackageTags>
     <PackageReleaseNotes>1.1.0:
-
-Accepting duplicates in source data
-Pinning source data to specific version
-Upgraded dependency to CsvHelper to version 12.2.1</PackageReleaseNotes>
+      - Accepting duplicates in source data
+      - Pinning source data to specific version
+      - Upgraded dependency to CsvHelper to version 12.2.1
+   1.0.0: First public release</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <AssemblyVersion>1.1.0.0</AssemblyVersion>
     <FileVersion>1.1.0.0</FileVersion>
