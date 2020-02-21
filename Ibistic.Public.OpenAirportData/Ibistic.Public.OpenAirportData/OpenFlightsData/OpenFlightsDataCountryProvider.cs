@@ -15,7 +15,7 @@ namespace Ibistic.Public.OpenAirportData.OpenFlightsData
 
         public OpenFlightsDataCountryProvider(string cacheFileName) : base(cacheFileName)
         {
-            Source = new Uri("https://raw.githubusercontent.com/jpatokal/openflights/master/data/countries.dat");
+            Source = new Uri("https://raw.githubusercontent.com/jpatokal/openflights/30ec683370765ebb55e7ca24dba8decdd5dd25bc/data/countries.dat");
         }
 
         public int BadDataRowCount { get; private set; }

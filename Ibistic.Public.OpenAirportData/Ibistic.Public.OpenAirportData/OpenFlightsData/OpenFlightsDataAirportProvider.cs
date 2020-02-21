@@ -18,7 +18,7 @@ namespace Ibistic.Public.OpenAirportData.OpenFlightsData
         public OpenFlightsDataAirportProvider(string cacheFileName, OpenFlightsDataCountryProvider countryProvider = null) : base(cacheFileName)
         {
             _countryProvider = countryProvider;
-            Source = new Uri("https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat");
+            Source = new Uri("https://raw.githubusercontent.com/jpatokal/openflights/30ec683370765ebb55e7ca24dba8decdd5dd25bc/data/airports.dat");
         }
 
         public int BadDataRowCount { get; private set; }
@@ -50,6 +50,7 @@ namespace Ibistic.Public.OpenAirportData.OpenFlightsData
             configuration.BadDataFound = context => BadDataRowCount++;
 
             _csvReader = new CsvReader(_textReader, configuration);
+
             var airports =  _csvReader.GetRecords<Airport>();
 
             return _countryProvider == null ? airports : AddCountryInformation(airports);
@@ -57,8 +58,17 @@ namespace Ibistic.Public.OpenAirportData.OpenFlightsData
 
         private IEnumerable<Airport> AddCountryInformation(IEnumerable<Airport> airports)
         {
-            Dictionary<string, Country> countriesByName = _countryProvider.GetAllCountries().Where(x => !String.IsNullOrEmpty(x.Name))
-                .ToDictionary(x => x.Name);
+            Dictionary<string, Country> countriesByName = new Dictionary<string, Country>();
+
+            foreach (var country in _countryProvider.GetAllCountries())
+            {
+                if (!string.IsNullOrEmpty(country.Name) && !countriesByName.ContainsKey(country.Name))
+                {
+                    countriesByName.Add(country.Name, country);
+                }
+                //this should throw exception for duplicate countries
+                
+            }
 
             foreach (var airport in airports)
             {

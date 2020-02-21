@@ -6,7 +6,7 @@ using Ibistic.Public.OpenAirportData.MemoryDatabase;
 using Ibistic.Public.OpenAirportData.OpenFlightsData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ibistic.Public.OpenAirportData.Tests
+namespace Ibistic.Public.OpenAirportData.Tests2
 {
     [TestClass]
     public class OpenFlightsDataProviderTests
@@ -216,13 +216,21 @@ namespace Ibistic.Public.OpenAirportData.Tests
         [TestMethod]
         public void TestListInvalidAirports()
         {
-            Dictionary<string, Country> countries;
+            Dictionary<string, Country> countries = new Dictionary<string, Country>();
 
             using (var countryProvider = new OpenFlightsDataCountryProvider(Path.GetTempFileName()))
             {
                 try
                 {
-                    countries = countryProvider.GetAllCountries().ToDictionary(x => x.Name);
+                    foreach (var country in countryProvider.GetAllCountries())
+                    {
+                        if (!string.IsNullOrEmpty(country.Name) && !countries.ContainsKey(country.Name))
+                        {
+                            countries.Add(country.Name, country);
+                        }
+
+                        //throw new InvalidDataException($"Invalid country with name {country.Name} received");
+                    }
                 }
                 finally
                 {
@@ -309,11 +317,30 @@ namespace Ibistic.Public.OpenAirportData.Tests
                     Assert.IsNotNull(malagaAirport);
                     Assert.IsTrue(malagaAirport.CountryAlpha2.Equals("ES", StringComparison.Ordinal));
 
+                    //OSLO
+                    airportFound = database.TryGetAirport("OSL", out Airport osloAirport);
+                    Assert.IsTrue(airportFound);
+                    Assert.IsNotNull(osloAirport);
+                    Assert.IsTrue(osloAirport.CountryAlpha2.Equals("NO", StringComparison.Ordinal));
+
+                    //COPENHAGEN
+                    airportFound = database.TryGetAirport("CPH", out Airport copenhagenAirport);
+                    Assert.IsTrue(airportFound);
+                    Assert.IsNotNull(copenhagenAirport);
+                    Assert.IsTrue(copenhagenAirport.CountryAlpha2.Equals("DK", StringComparison.Ordinal));
+
+                    //LONDON
+                    airportFound = database.TryGetAirport("LHR", out Airport londonAirport);
+                    Assert.IsTrue(airportFound);
+                    Assert.IsNotNull(londonAirport);
+                    Assert.IsTrue(londonAirport.CountryAlpha2.Equals("GB", StringComparison.Ordinal));
                     Assert.IsFalse(database.TryGetAirport("___", out _));
 
                 }
             }
         }
+
+
 
     }
 }
